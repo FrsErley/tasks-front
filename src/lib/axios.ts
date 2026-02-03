@@ -1,6 +1,8 @@
 import axios from "axios";
 
-export const api = axios.create({ baseURL: "https://todolist-api-ylqi.onrender.com" });
+export const api = axios.create({
+  baseURL: "https://todolist-api-ylqi.onrender.com/api",
+});
 
 api.interceptors.request.use(
   (config) => {
@@ -12,5 +14,5 @@ api.interceptors.request.use(
   },
   (error) => {
     return Promise.reject(error);
-  }
+  },
 );
